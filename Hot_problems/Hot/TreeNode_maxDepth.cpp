@@ -14,8 +14,8 @@ struct TreeNode
 
 //DFS
 int DmaxDepth(TreeNode* root) {
-    if(!root) return 0;
-    return max(maxDepth(root->left),maxDepth(root->right))+1;
+  if(!root) return 0;
+  return max(maxDepth(root->left),maxDepth(root->right))+1;
 }
 
 //BFS
@@ -23,12 +23,10 @@ int maxDepth(TreeNode* root) {
     int maxLen=0;
     queue<TreeNode*> que;
     if(root) que.push(root);
-    while(!que.empty())
-    {
+    while(!que.empty()) { 
         int len=que.size();
         ++maxLen;
-        for(int i=0;i<len;++i)
-        {
+        for(int i=0;i<len;++i) {
             TreeNode* node=que.front();
             que.pop();
             if(node->left) que.push(node->left);
